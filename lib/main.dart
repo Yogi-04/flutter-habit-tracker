@@ -2,9 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:wakelock/wakelock.dart';
 
-void main() {
+import 'core/resources/svgs.dart';
+
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  if (kDebugMode) Wakelock.enable();
+  if (kDebugMode) await Wakelock.enable();
+  await AppSvgs.preloadSVGs();
   runApp(const MyApp());
 }
 

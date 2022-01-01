@@ -17,3 +17,6 @@ linter:
     prefer_final_parameters: false
     sort_pub_dependencies: false
     prefer_expression_function_bodies: false
+    always_specify_types: false
+    unnecessary_final: false
+    always_use_package_imports: false
