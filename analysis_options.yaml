@@ -20,3 +20,8 @@ linter:
     always_specify_types: false
     unnecessary_final: false
     always_use_package_imports: false
+    prefer_int_literals: false
+    sort_constructors_first: false
+    always_put_required_named_parameters_first: false
+    diagnostic_describe_all_properties: false
+    lines_longer_than_80_chars: false
