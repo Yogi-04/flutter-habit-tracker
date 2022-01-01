@@ -1,6 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:wakelock/wakelock.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kDebugMode) Wakelock.enable();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
