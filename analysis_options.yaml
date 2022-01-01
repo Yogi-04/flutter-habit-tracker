@@ -1,5 +1,4 @@
 include: all_lint_rules.yaml
-
 analyzer:
   strong-mode:
     implicit-casts: false
@@ -25,3 +24,5 @@ linter:
     always_put_required_named_parameters_first: false
     diagnostic_describe_all_properties: false
     lines_longer_than_80_chars: false
+    require_trailing_commas: false
+    library_private_types_in_public_api: false

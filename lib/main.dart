@@ -1,10 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:habit_tracker/core/resources/colors.dart';
-import 'package:habit_tracker/core/theme/theme.dart';
 import 'package:wakelock/wakelock.dart';
 
+import 'core/resources/colors.dart';
 import 'core/resources/svgs.dart';
+import 'core/size_config.dart';
+import 'core/theme/theme.dart';
+import 'screens/home/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,18 +20,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: AppTheme(
-        data: AppThemeData.defaultWithSwatch(AppColors.red),
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Material App Bar'),
-          ),
-          body: const Center(
-            child: Text('Hello World'),
-          ),
-        ),
+    return LayoutBuilder(
+      builder: (context, constraints) => OrientationBuilder(
+        builder: (context, orientation) {
+          SizeConfig.instance.initialize(constraints, orientation);
+          return MaterialApp(
+            title: 'Habit Tracker',
+            home: AppTheme(
+              data: AppThemeData.defaultWithSwatch(AppColors.red),
+              child: const HomeScreen(),
+            ),
+          );
+        },
       ),
     );
   }
