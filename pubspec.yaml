@@ -14,10 +14,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.0.0
   wakelock: ^0.5.6
+  hive: ^2.0.5
+  uuid: ^3.0.5
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  hive_generator: ^1.1.1
+  build_runner: ^2.1.7
   flutter_launcher_icons:
     git:
       url: https://github.com/Davenchy/flutter_launcher_icons.git
